@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Service Search | ServiceNexus</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <a href="/" class="btn btn-outline-success mb-4">
+        ← Back to Home
+    </a>
+
+    <h1>Find Local Services</h1>
+
+    <p class="text-muted">
+        Your ServiceNexus search details
+    </p>
+
+    <div class="card p-4 mt-4">
+
+        <h4>Search Details</h4>
+
+        <p>
+            Service:
+            <strong th:text="${query != null and !query.isBlank()
+                ? query : 'All services'}"></strong>
+        </p>
+
+        <p>
+            Location:
+            <strong th:text="${location != null and !location.isBlank()
+                ? location : 'All locations'}"></strong>
+        </p>
+
+    </div>
+
+    <div class="alert alert-info mt-4">
+        Search received successfully! We'll connect this search to
+        the MySQL services database in the next stage.
+    </div>
+
+</div>
+
+</body>
+</html>
